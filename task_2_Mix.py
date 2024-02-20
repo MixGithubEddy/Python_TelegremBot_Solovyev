@@ -1,26 +1,20 @@
 def draw_board(board):
     from colorama import Fore, Back, Style
     # запустить цикл, который проходит по всем элементам поля, проверяет их значение
-    # и в зависимости от ихзначчений раскрашивает пустую ячейку в желтый цвет, 'X' в красный,
-    # '0' в синиц
-    for x in range(3):
-        for y in range(3):
-            if board[x][y] == " ":
-                if y < 2:
-                    print(Back.YELLOW + board[x][y] + Style.RESET_ALL, "| ", end='')
-                else:
-                    print(Back.YELLOW + board[x][y] + Style.RESET_ALL, "| ")
-            elif board[x][y] == "X":
-                if y < 2:
-                    print(Fore.RED + 'X' + Style.RESET_ALL, "| ", end='')
-                else:
-                    print(Fore.RED + 'X' + Style.RESET_ALL, "| ")
-            elif board[x][y] == "0":
-                if y < 2:
-                    print(Fore.BLUE + '0'  + Style.RESET_ALL, "| ", end='')
-                else:
-                    print(Fore.BLUE + '0'  + Style.RESET_ALL, "| ")
-        print("---------")
+    # и в зависимости от их значчений раскрашивает пустую ячейку в желтый цвет, 'X' в красный,
+    # '0' в синий
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == " ":
+                A=Back.YELLOW
+            elif board[i][j] == "X":
+                A=Fore.RED
+            else:
+                A=Fore.BLUE
+            print(A + board[i][j] + Style.RESET_ALL, "| ",end='')
+            if j > 2:
+                print(A + board[i][j] + Style.RESET_ALL, "| ")
+        print("\n---------")
 
 def ask_and_make_move(player, board):
     x, y = ask_move(player, board)
