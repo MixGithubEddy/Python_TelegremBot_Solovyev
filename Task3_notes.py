@@ -82,7 +82,7 @@ def main():
         if action == '4':
             delete_note()
 
-        print(Fore.RED + 'для дальнейшего продолжения работы с заметками нажмите y/n' + Style.RESET_ALL)
+        print(Fore.BLUE + 'для дальнейшего продолжения работы с заметками нажмите y/n' + Style.RESET_ALL)
         ans = input().lower()
         if ans == 'n':
             break
